@@ -1,9 +1,12 @@
 {
   "name": "react-paginate-in-peace",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "This is a simple react pagination component",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asif-almahmud/react-paginate-in-peace.git"
+  },
   "scripts": {
     "build": "rollup -c"
   },
