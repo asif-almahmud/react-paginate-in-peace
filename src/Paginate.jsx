@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
+import PropTypes from "prop-types";
 
-const Paginate = (props) => {
-  const [totalPages, setTotalPages] = useState(Math.ceil(props.totalPages));
+
+
+const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundColor, buttonBorderColor, arrowColor, dotColor}) => {
+  const [totalPages, setTotalPages] = useState(Math.ceil(totalPageCount));
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    setTotalPages(Math.ceil(props.totalPages));
+    setTotalPages(Math.ceil(totalPageCount));
     setCurrentPage(1);
-  }, [props.totalPages]);
+  }, [totalPageCount]);
 
   return (
     <div className="paginationContainer">
@@ -20,7 +23,7 @@ const Paginate = (props) => {
         <>
           <div
             onClick={() => {
-              props.setCurrentPage(1);
+              setPage(1);
               setCurrentPage(1);
             }}
             className={
@@ -30,7 +33,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === 1 ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrowDouble"} ${"left"} ${
                 currentPage === 1 ? "activeStyle" : "inactiveStyle"
@@ -40,7 +43,7 @@ const Paginate = (props) => {
           <div
             onClick={() => {
               if (currentPage > 1) {
-                props.setCurrentPage(currentPage - 1);
+                setPage(currentPage - 1);
                 setCurrentPage(currentPage - 1);
               }
             }}
@@ -51,7 +54,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === 1 ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrow"} ${"left"}`}
             ></i>
@@ -59,21 +62,21 @@ const Paginate = (props) => {
           {totalPages > 0 && (
             <div
               onClick={() => {
-                props.setCurrentPage(1);
+                setPage(1);
                 setCurrentPage(1);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 1
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 1
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 1 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -83,21 +86,21 @@ const Paginate = (props) => {
           {totalPages > 1 && (
             <div
               onClick={() => {
-                props.setCurrentPage(2);
+                setPage(2);
                 setCurrentPage(2);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 2
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 2
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 2 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -107,21 +110,21 @@ const Paginate = (props) => {
           {totalPages > 2 && (
             <div
               onClick={() => {
-                props.setCurrentPage(3);
+                setPage(3);
                 setCurrentPage(3);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 3
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 3
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 3 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -131,21 +134,21 @@ const Paginate = (props) => {
           {totalPages > 3 && (
             <div
               onClick={() => {
-                props.setCurrentPage(4);
+                setPage(4);
                 setCurrentPage(4);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 4
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 4
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 4 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -155,21 +158,21 @@ const Paginate = (props) => {
           {totalPages > 4 && (
             <div
               onClick={() => {
-                props.setCurrentPage(5);
+                setPage(5);
                 setCurrentPage(5);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 5
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 5
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 5 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -179,21 +182,21 @@ const Paginate = (props) => {
           {totalPages > 5 && (
             <div
               onClick={() => {
-                props.setCurrentPage(6);
+                setPage(6);
                 setCurrentPage(6);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 6
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 6
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 6 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -203,21 +206,21 @@ const Paginate = (props) => {
           {totalPages > 6 && (
             <div
               onClick={() => {
-                props.setCurrentPage(7);
+                setPage(7);
                 setCurrentPage(7);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 7
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 7
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 7 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -227,21 +230,21 @@ const Paginate = (props) => {
           {totalPages > 7 && (
             <div
               onClick={() => {
-                props.setCurrentPage(8);
+                setPage(8);
                 setCurrentPage(8);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 8
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 8
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 8 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -251,21 +254,21 @@ const Paginate = (props) => {
           {totalPages > 8 && (
             <div
               onClick={() => {
-                props.setCurrentPage(9);
+                setPage(9);
                 setCurrentPage(9);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 9
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 9
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 9 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -275,21 +278,21 @@ const Paginate = (props) => {
           {totalPages > 9 && (
             <div
               onClick={() => {
-                props.setCurrentPage(10);
+                setPage(10);
                 setCurrentPage(10);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 10
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 10
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 10 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -299,7 +302,7 @@ const Paginate = (props) => {
           <div
             onClick={() => {
               if (currentPage < Math.ceil(totalPages)) {
-                props.setCurrentPage(currentPage + 1);
+                setPage(currentPage + 1);
                 setCurrentPage(currentPage + 1);
               }
             }}
@@ -312,14 +315,14 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === Math.ceil(totalPages) ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrow"} ${"right"}`}
             ></i>
           </div>
           <div
             onClick={() => {
-              props.setCurrentPage(Math.ceil(totalPages));
+              setPage(Math.ceil(totalPages));
               setCurrentPage(Math.ceil(totalPages));
             }}
             className={
@@ -331,7 +334,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === Math.ceil(totalPages) ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrowDouble"} ${"right"}`}
             ></i>
@@ -347,7 +350,7 @@ const Paginate = (props) => {
         <>
           <div
             onClick={() => {
-              props.setCurrentPage(1);
+              setPage(1);
               setCurrentPage(1);
             }}
             className={
@@ -357,7 +360,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === 1 ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrowDouble"} ${"left"} ${
                 currentPage === 1 ? "activeStyle" : "inactiveStyle"
@@ -367,7 +370,7 @@ const Paginate = (props) => {
           <div
             onClick={() => {
               if (currentPage > 1) {
-                props.setCurrentPage(currentPage - 1);
+                setPage(currentPage - 1);
                 setCurrentPage(currentPage - 1);
               }
             }}
@@ -378,7 +381,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === 1 ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrow"} ${"left"}`}
             ></i>
@@ -387,21 +390,21 @@ const Paginate = (props) => {
           {
             <div
               onClick={() => {
-                props.setCurrentPage(1);
+                setPage(1);
                 setCurrentPage(1);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 1
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 1
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 1 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -411,21 +414,21 @@ const Paginate = (props) => {
           {
             <div
               onClick={() => {
-                props.setCurrentPage(2);
+                setPage(2);
                 setCurrentPage(2);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 2
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 2
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 2 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -436,21 +439,21 @@ const Paginate = (props) => {
           {currentPage < 6 && (
             <div
               onClick={() => {
-                props.setCurrentPage(3);
+                setPage(3);
                 setCurrentPage(3);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 3
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 3
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 3 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -460,21 +463,21 @@ const Paginate = (props) => {
           {currentPage < 6 && (
             <div
               onClick={() => {
-                props.setCurrentPage(4);
+                setPage(4);
                 setCurrentPage(4);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 4
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 4
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 4 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -484,21 +487,21 @@ const Paginate = (props) => {
           {currentPage < 6 && (
             <div
               onClick={() => {
-                props.setCurrentPage(5);
+                setPage(5);
                 setCurrentPage(5);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 5
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 5
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 5 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -508,21 +511,21 @@ const Paginate = (props) => {
           {currentPage < 6 && (
             <div
               onClick={() => {
-                props.setCurrentPage(6);
+                setPage(6);
                 setCurrentPage(6);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === 6
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === 6
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={currentPage === 6 ? "pageNoActive" : "pageNoInactive"}
             >
@@ -533,7 +536,7 @@ const Paginate = (props) => {
           {/* ------------------Pagination Part-2 (Middle part)---------------------- */}
 
           {
-            <div style={{ color: props.dotColor ? props.dotColor : "black" }}>
+            <div style={{ color: dotColor ? dotColor : "black" }}>
               &nbsp;...
               {currentPage > 5 && currentPage < totalPages - 4 ? (
                 <span>&nbsp;</span>
@@ -543,21 +546,21 @@ const Paginate = (props) => {
           {currentPage > 5 && currentPage < totalPages - 4 ? (
             <div
               onClick={() => {
-                props.setCurrentPage(currentPage - 1);
+                setPage(currentPage - 1);
                 setCurrentPage(currentPage - 1);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === currentPage - 1
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === currentPage - 1
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === currentPage - 1
@@ -573,21 +576,21 @@ const Paginate = (props) => {
           {currentPage > 5 && currentPage < totalPages - 4 && (
             <div
               onClick={() => {
-                props.setCurrentPage(currentPage);
+                setPage(currentPage);
                 setCurrentPage(currentPage);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === currentPage
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === currentPage
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === currentPage ? "pageNoActive" : "pageNoInactive"
@@ -599,21 +602,21 @@ const Paginate = (props) => {
           {currentPage > 5 && currentPage < totalPages - 4 && (
             <div
               onClick={() => {
-                props.setCurrentPage(currentPage + 1);
+                setPage(currentPage + 1);
                 setCurrentPage(currentPage + 1);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === currentPage + 1
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === currentPage + 1
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === currentPage + 1
@@ -625,7 +628,7 @@ const Paginate = (props) => {
             </div>
           )}
           {
-            <div style={{ color: props.dotColor ? props.dotColor : "black" }}>
+            <div style={{ color: dotColor ? dotColor : "black" }}>
               {currentPage > 5 && currentPage < totalPages - 4 ? (
                 <span>&nbsp;</span>
               ) : null}
@@ -638,21 +641,21 @@ const Paginate = (props) => {
           {currentPage > totalPages - 5 && (
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages - 5);
+                setPage(totalPages - 5);
                 setCurrentPage(totalPages - 5);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages - 5
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages - 5
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages - 5
@@ -666,21 +669,21 @@ const Paginate = (props) => {
           {currentPage > totalPages - 5 && (
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages - 4);
+                setPage(totalPages - 4);
                 setCurrentPage(totalPages - 4);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages - 4
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages - 4
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages - 4
@@ -694,21 +697,21 @@ const Paginate = (props) => {
           {currentPage > totalPages - 5 && (
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages - 3);
+                setPage(totalPages - 3);
                 setCurrentPage(totalPages - 3);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages - 3
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages - 3
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages - 3
@@ -722,21 +725,21 @@ const Paginate = (props) => {
           {currentPage > totalPages - 5 && (
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages - 2);
+                setPage(totalPages - 2);
                 setCurrentPage(totalPages - 2);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages - 2
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages - 2
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages - 2
@@ -750,21 +753,21 @@ const Paginate = (props) => {
           {
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages - 1);
+                setPage(totalPages - 1);
                 setCurrentPage(totalPages - 1);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages - 1
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages - 1
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages - 1
@@ -778,21 +781,21 @@ const Paginate = (props) => {
           {
             <div
               onClick={() => {
-                props.setCurrentPage(totalPages);
+                setPage(totalPages);
                 setCurrentPage(totalPages);
               }}
               style={{
                 borderColor: props.borderColor
-                  ? props.buttonBorderColor
-                  : props.activeBackgroundColor,
+                  ? buttonBorderColor
+                  : activeBackgroundColor,
                 backgroundColor:
                   currentPage === totalPages
-                    ? props.activeBackgroundColor
-                    : props.activeDigitColor,
+                    ? activeBackgroundColor
+                    : activeDigitColor,
                 color:
                   currentPage === totalPages
-                    ? props.activeDigitColor
-                    : props.activeBackgroundColor,
+                    ? activeDigitColor
+                    : activeBackgroundColor,
               }}
               className={
                 currentPage === totalPages ? "pageNoActive" : "pageNoInactive"
@@ -805,7 +808,7 @@ const Paginate = (props) => {
           <div
             onClick={() => {
               if (currentPage < totalPages) {
-                props.setCurrentPage(currentPage + 1);
+                setPage(currentPage + 1);
                 setCurrentPage(currentPage + 1);
               }
             }}
@@ -816,14 +819,14 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === totalPages ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrow"} ${"right"}`}
             ></i>
           </div>
           <div
             onClick={() => {
-              props.setCurrentPage(totalPages);
+              setPage(totalPages);
               setCurrentPage(totalPages);
             }}
             className={
@@ -833,7 +836,7 @@ const Paginate = (props) => {
             <i
               style={{
                 opacity: currentPage === totalPages ? "0.5" : null,
-                borderColor: props.arrowColor,
+                borderColor: arrowColor,
               }}
               className={`${"arrowDouble"} ${"right"} ${
                 currentPage === 1 ? "activeStyle" : "inactiveStyle"
@@ -847,6 +850,18 @@ const Paginate = (props) => {
     </div>
   );
 };
+
+
+Paginate.propTypes = {
+  totalPageCount : PropTypes.number.isRequired,
+  setPage : PropTypes.func.isRequired,
+  activeDigitColor : PropTypes.string,
+  activeBackgroundColor : PropTypes.string,
+  buttonBorderColor : PropTypes.string,
+  arrowColor : PropTypes.string,
+  dotColor : PropTypes.string,
+}
+
 
 
 

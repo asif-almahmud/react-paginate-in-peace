@@ -52,13 +52,13 @@ export default DataTable = () => {
       />
       {/* Now we are going to use our imported paginating component. */}
       <Paginate
-        totalPages={totalPages} // Required Property
-        setCurrentPage={setCurrentPage} // Required Property
+        totalPageCount={totalPages} // Required Property
+        setPage={setCurrentPage} // Required Property
         activeDigitColor={"white"} // Optional Property
         activeBackgroundColor={"#21385b"} // Optional Property
         buttonBorderColor={""} // Optional Property
         arrowColor={"#21385b"} // Optional Property
-        dotColor={"blue"} // Optional Property
+        dotColor={"#000"} // Optional Property
       />
     </div>
   );
@@ -67,15 +67,15 @@ export default DataTable = () => {
 
 ## Props
 
-Required props: totalPages, setCurrentPage .
+Required props: totalPageCount, setPage .
 
 Optional props: activeDigitColor, activeBackgroundColor, buttonBorderColor, arrowColor, dotColor .
 
 | Name                  | Type     | Details                                                                                                                                        |
 | --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| totalPages            | number   | Provide the variable that gives total number of pages (This prop is required )                                                                 |
-| setCurrentPage        | function | Provide your state setting function for the current or active page. (Required prop)                                                            |
-| activeDigitColor      | string   | Takes a color name as string. It defines the active digit color and the background color of the inactive buttons (Optional prop)               |
+| totalPageCount        | number   | Provide the variable that gives total number of pages (This prop is required )                                                                 |
+| setPage               | function | Provide your state setting function for setting the current or active page. (Required prop)                                                    |
+| activeDigitColor      | string   | Takes a color name as string. It defines the active digit color and the background color of the inactive buttons. (Optional prop)              |
 | activeBackgroundColor | string   | Takes a color name as string. It defines the background color of the active digit and the digit color of the inactive buttons. (Optional prop) |
 | buttonBorderColor     | string   | Takes a color name as string. It defines the border color of the digit buttons. (Optional prop)                                                |
 | arrowColor            | string   | Takes a color name as string. It defines the navigating arrows color.(Optional prop)                                                           |
