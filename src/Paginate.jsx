@@ -66,7 +66,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(1);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -90,7 +90,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(2);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -114,7 +114,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(3);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -138,7 +138,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(4);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -162,7 +162,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(5);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -186,7 +186,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(6);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -210,7 +210,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(7);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -234,7 +234,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(8);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -258,7 +258,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(9);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -282,7 +282,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(10);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -394,7 +394,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(1);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -418,7 +418,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(2);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -443,7 +443,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(3);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -467,7 +467,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(4);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -491,7 +491,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(5);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -515,7 +515,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(6);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -550,7 +550,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(currentPage - 1);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -580,7 +580,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(currentPage);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -606,7 +606,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(currentPage + 1);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -645,7 +645,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages - 5);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -673,7 +673,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages - 4);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -701,7 +701,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages - 3);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -729,7 +729,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages - 2);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -757,7 +757,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages - 1);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:
@@ -785,7 +785,7 @@ const Paginate = ({totalPageCount, setPage, activeDigitColor, activeBackgroundCo
                 setCurrentPage(totalPages);
               }}
               style={{
-                borderColor: props.borderColor
+                borderColor: buttonBorderColor
                   ? buttonBorderColor
                   : activeBackgroundColor,
                 backgroundColor:

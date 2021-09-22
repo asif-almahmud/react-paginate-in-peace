@@ -32,7 +32,7 @@ MODE.map((m) => {
       exports: "auto",
     },
     // this externelizes react to prevent rollup from compiling it
-    external: ["react", /@babel\/runtime/],
+    external: ["react", "prop-types", /@babel\/runtime/],
     plugins: [
       // these are babel comfigurations
       babel({
