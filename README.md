@@ -12,7 +12,7 @@ or
 
 ## Usage
 
-```
+```jsx
 import React, { useState } from "react";
 import Table from "./Table";
 import Paginate from "react-paginate-in-peace";
@@ -32,46 +32,38 @@ const DataTable = () => {
       data.id > (currentPage - 1) * rowsPerPage
   );
 
-
   return (
     <div>
-
-        // I have created the table component below to reduce markup
-
-        <Table
-          tableData={dataContentPerPage}
-          thNames={["Name", "Email", "Gender", "Phone"]}
-          tdProperties={["first_name", "email", "gender", "phone"]}
-          thStyle={{
-            textAlign: "center",
-            border: "1px solid #ddd",
-            backgroundColor: "#E5EAF0",
-            paddingTop: "2px",
-            paddingBottom: "2px",
-          }}
-          tdStyle={{
-            textAlign: "center",
-            border: "1px solid #ddd",
-            backgroundColor: "#edf0f4",
-            paddingTop: "2px",
-            paddingBottom: "2px",
-          }}
-        />
-
-
+      // I have created the table component below to reduce markup
+      <Table
+        tableData={dataContentPerPage}
+        thNames={["Name", "Email", "Gender", "Phone"]}
+        tdProperties={["first_name", "email", "gender", "phone"]}
+        thStyle={{
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#E5EAF0",
+          paddingTop: "2px",
+          paddingBottom: "2px",
+        }}
+        tdStyle={{
+          textAlign: "center",
+          border: "1px solid #ddd",
+          backgroundColor: "#edf0f4",
+          paddingTop: "2px",
+          paddingBottom: "2px",
+        }}
+      />
       {/* Now we are going to use our imported paginating component. */}
-
-        <Paginate
-          totalPages={totalPages} // Required Property
-          setCurrentPage={setCurrentPage} // Required Property
-          activeDigitColor={"white"} // Optional Property
-          activeBackgroundColor={"#21385b"} // Optional Property
-          buttonBorderColor={""} // Optional Property
-          arrowColor={"#21385b"} // Optional Property
-          dotColor={"blue"} // Optional Property
-        />
-
-
+      <Paginate
+        totalPages={totalPages} // Required Property
+        setCurrentPage={setCurrentPage} // Required Property
+        activeDigitColor={"white"} // Optional Property
+        activeBackgroundColor={"#21385b"} // Optional Property
+        buttonBorderColor={""} // Optional Property
+        arrowColor={"#21385b"} // Optional Property
+        dotColor={"blue"} // Optional Property
+      />
     </div>
   );
 };
