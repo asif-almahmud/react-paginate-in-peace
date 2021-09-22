@@ -1,0 +1,35 @@
+{
+  "name": "react-paginate-in-peace",
+  "version": "1.2.2",
+  "description": "This is a simple react pagination component",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "react-paginate",
+    "react-pagination",
+    "react-paginator",
+    "react-simple-pagination"
+  ],
+  "author": "Md. Asif Al-Mahmud",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.15.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "autoprefixer": "^10.3.4",
+    "rollup": "^2.56.3",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-styles": "^3.14.1"
+  }
+}
